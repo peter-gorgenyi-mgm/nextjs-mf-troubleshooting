@@ -1,6 +1,10 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Nav from "../components/Nav";
+
+const Nav = dynamic(() => import("next2/Nav"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -13,7 +17,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <Nav />
-        <h1 className={styles.title}>NEXT 2 (remote)</h1>
+        <h1 className={styles.title}>NEXT1 (consumer)</h1>
       </main>
     </div>
   );

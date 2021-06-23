@@ -4,7 +4,7 @@ module.exports = withFederatedSidecar({
   name: "next2",
   filename: "static/chunks/remoteEntry.js",
   exposes: {
-    "./sampleComponent": "./components/sampleComponent.js",
+    "./Nav": "./components/Nav.js",
   },
   shared: {
     react: {
@@ -15,4 +15,7 @@ module.exports = withFederatedSidecar({
   },
 })({
   reactStrictMode: true,
+  future: {
+    webpack5: true
+  }
 });
